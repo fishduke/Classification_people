@@ -10,7 +10,7 @@ import glob  #이미지 파일 얻기위한 패키지
 $ python face_landmark_detection.py shape_predictor_68_face_landmarks.dat ../examples/faces
 뭐 이런식으로...
 '''
-if len(sys.argv) != 3:
+if len(sys.argv) <= 0:
     print(
         "Give the path to the trained shape predictor model as the first "
         "argument and then the directory containing the facial images.\n"
@@ -22,9 +22,11 @@ if len(sys.argv) != 3:
     exit()
 
 # 첫번째(파이썬 코드 뺀) 매개변수로 68 얼굴 랜드마크 학습된 모델 데이터 
-predictor_path = sys.argv[1]
+# predictor_path = sys.argv[1]
+predictor_path = './shape_predictor_68_face_landmarks.dat'
 # 두번재 매개변수로는 랜드마크를 적용할 이미지들 모아둔 폴더
-faces_folder_path = sys.argv[2]
+# faces_folder_path = sys.argv[2]
+faces_folder_path = './Dataset/face'
 
 # 얼굴 인식용 클래스 생성 (기본 제공되는 얼굴 인식 모델 사용)
 detector = dlib.get_frontal_face_detector()
