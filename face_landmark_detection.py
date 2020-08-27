@@ -51,7 +51,7 @@ for f in glob.glob(os.path.join(faces_folder_path, "*.jpg")):
     # 얼굴 인식 두번째 변수 1은 업샘플링을 한번 하겠다는 얘기인데
     # 업샘플링을하면 더 많이 인식할 수 있다고 한다.
     # 다만 값이 커질수록 느리고 메모리도 많이 잡아먹는다.
-    # 그냥 1이면 될 듯. 
+    # 그냥 1이면 될 듯.
     dets = detector(img, 1)
 
     # 인식된 얼굴 개수 출력 
@@ -66,7 +66,7 @@ for f in glob.glob(os.path.join(faces_folder_path, "*.jpg")):
 
         # 인식된 좌표에서 랜드마크 추출 
         shape = predictor(img, d)
-
+    
         # shape는 "full_object_detection" 클래스이다. 
         # part(0)부터 part(67)까지 총 68개의 X,Y 좌표를 가지고 있다. 
         print("Part 0: {}, Part 1: {} ...".format(shape.part(0),
